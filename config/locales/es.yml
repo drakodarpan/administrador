@@ -16,6 +16,7 @@ es:
     no_receive_unlocked: No recibiste la información para desbloquear?
     sign_in_with: Ingreso como
     remember_me: Recordarme
+    password_confirmation: Confirmar password
   date:
     abbr_day_names:
     - dom

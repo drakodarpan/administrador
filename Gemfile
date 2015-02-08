@@ -48,3 +48,4 @@ gem 'devise'
 gem 'foundation-rails'
 gem 'figaro'
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
+gem 'better_errors'
