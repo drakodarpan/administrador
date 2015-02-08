@@ -5,13 +5,17 @@ es:
     log_in: Ingresar
     sign_up: Registrarse
   form_text:
+    home: Inicio
     log_in: Iniciar Sesión
     sign_in: Ingresar
     sign_up: Registrarse
+    edit_profile: Editar cuenta
+    exit_account: Cerrar sesión
     forgot_pass: Olvidaste tu password?
     no_receive_confirmation: No recibiste la confimación?
     no_receive_unlocked: No recibiste la información para desbloquear?
     sign_in_with: Ingreso como
+    remember_me: Recordarme
   date:
     abbr_day_names:
     - dom

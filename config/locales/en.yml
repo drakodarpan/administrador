@@ -5,13 +5,17 @@ en:
     log_in: Log in
     sign_up: Sign up
   form_text:
+    home: Home
     log_in: Log in
     sign_in: Sign in
     sign_up: Sign up
+    edit_profile: Edit profile
+    exit_account: Sign off
     forgot_pass: Forgot your password?
     no_receive_confirmation: Didn't receive confirmation instructions?
     no_receive_unlocked: Didn't receive unlock instructions?
     sign_in_with: Ingreso como
+    remember_me: Remember me
   date:
     abbr_day_names:
     - Sun

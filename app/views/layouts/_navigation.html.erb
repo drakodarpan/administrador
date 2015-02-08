@@ -1,0 +1,31 @@
+<nav class="top-bar" data-topbar>
+  <ul class="title-area">
+     
+    <li class="name">
+      <h1>
+        <%= link_to t("form_text.home"), root_path %>
+      </h1>
+    </li>
+    <li class="toggle-topbar menu-icon">
+      <a href="#">
+        <span>Menu</span>
+      </a>
+    </li>
+  </ul>
+
+  <section class="top-bar-section">           
+    <ul class="right">
+      <li class="divider"></li>
+        <% if usuario_signed_in? %>
+        <li><%= link_to t("form_text.edit_profile"), edit_usuario_session_path(current_usuario) %></li>
+        <li class="divider"></li>
+        <li><%= link_to t("form_text.exit_account"), destroy_usuario_session_path, method: :delete%></li>
+        <% else %>
+        <li class="divider"></li>
+        <li><%= link_to t("form_text.sign_in"), new_usuario_session_path %></li>
+        <li class="divider"></li>
+        <li><%= link_to t("form_text.sign_up"), new_usuario_registration_path %></li>
+        <% end %>
+    </ul>
+  </section>
+</nav>
