@@ -3,4 +3,13 @@ class Usuario < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
+  # Avatar
+  has_attached_file :avatar,
+                    :styles => { :medium => "300x300", :thumb => "100x100>" },
+                    :default_url => 'missing.jpg'
+
+  validates_attachment :avatar,
+                       :size => { :in => 0..20.kilobytes },
+                       :content_type => { :content_type => /\Aimage\/.*\Z/ }
 end
