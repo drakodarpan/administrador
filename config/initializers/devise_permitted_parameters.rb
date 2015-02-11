@@ -1,7 +1,7 @@
 module DevisePermittedParameters
   extend ActiveSupport::Concern
 
-  include do
+  included do
     before_filter :configure_permitted_parameters
   end
 

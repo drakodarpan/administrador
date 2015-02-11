@@ -18,3 +18,6 @@
 
 # Ignore application configuration
 /config/application.yml
+
+# Ignore imagen of public
+/public/system/

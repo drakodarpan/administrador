@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "Administrador" %></title>
 
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
@@ -14,15 +14,16 @@
 
   <body>
     <header>
-      <%= render "layouts/navigation" %>
+      <%= render 'layouts/navigation' %>
     </header>
 
     <main>
+      <%= render 'layouts/messages' %>
       <%= yield %>
     </main>
 
     <footer>
-      <%= render "layouts/footer" %>
+      <%= render 'layouts/footer' %>
     </footer>
   </body>
 </html>

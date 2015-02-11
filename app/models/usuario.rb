@@ -10,6 +10,6 @@ class Usuario < ActiveRecord::Base
                     :default_url => 'missing.jpg'
 
   validates_attachment :avatar,
-                       :size => { :in => 0..20.kilobytes },
+                       :size => { :in => 0..30.kilobytes },
                        :content_type => { :content_type => /\Aimage\/.*\Z/ }
 end

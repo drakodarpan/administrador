@@ -15,7 +15,6 @@ ActiveRecord::Schema.define(version: 20150208150629) do
 
   create_table "usuarios", force: :cascade do |t|
     t.string   "name"
-    t.string   "numero_empleado"
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"

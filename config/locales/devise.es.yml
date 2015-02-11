@@ -16,7 +16,7 @@ es:
       already_authenticated: 'Ya está dentro del sistema.'
       unauthenticated: 'Necesita ingresar o registrarse para continuar.'
       unconfirmed: 'Debe confirmar su cuenta para continuar.'
-      locked: 'Su eucnta está bloqueada.'
+      locked: 'Su cuenta está bloqueada.'
       invalid: 'Correo o contraseña invalidos.'
       invalid_token: 'Ficha de autenticación invalida.'
       timeout: 'Su sesión ha expirado, por favor ingrese nuevamente para continuar.'
@@ -37,7 +37,7 @@ es:
       signed_up: '¡Bienvenido! Ha ingresado al sistema exitosamente.'
       inactive_signed_up: 'Se ha registrado exitosamente, sin embargo, debido a que su cuenta esta %{reason}.'
       updated: 'Usted actualizó su cuenta exitosamente.'
-      destroyed: '¡Hasta luego! Su cuenta fue cancelada con éxito, esperamos verle de nuevo pronto. Gracias.'
+      destroyed: '¡Hasta luego! Su cuenta fue cancelada con éxito, esperamos verle de nuevo. Gracias.'
       reasons:
         inactive: 'inactiva'
         unconfirmed: 'sin confirmar'
@@ -56,4 +56,3 @@ es:
         subject: 'Instrucciones de reinicio de contraseña'
       unlock_instructions:
         subject: 'Instrucciones de desbloqueo'
-

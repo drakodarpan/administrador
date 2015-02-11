@@ -1,22 +1,45 @@
 en:
   title:
     welcome: Welcome
+    hello: Hello
   form_title:
     log_in: Log in
     sign_up: Sign up
+    edit_account: Edit the account of
+    update_account: Update
+    cancel_account: Cancel my account
+  form_button:
+    sign_in_button: Sign in
+    sign_up_button: Sign up
+    update_button: Update
+    edit_profile: Edit profile
+    exit_account: Sign off
   form_text:
     home: Home
     log_in: Log in
-    sign_in: Sign in
-    sign_up: Sign up
-    edit_profile: Edit profile
-    exit_account: Sign off
     forgot_pass: Forgot your password?
     no_receive_confirmation: Didn't receive confirmation instructions?
     no_receive_unlocked: Didn't receive unlock instructions?
     sign_in_with: Ingreso como
     remember_me: Remember me
     password_confirmation: Password confirmation
+    min_characters: characters minimum
+    name: Name
+    password_leave_blank: leave blank if you don't want to change it
+    current_password: we need your current password to confirm your changes
+    question_confirmation: Are you sure?
+    mensaje_cancel: To cancel this account may no longer enter the system.
+    password_now: Current password
+  email_send:
+    msj_email: You can confirm your account email through the link below
+    confirm_account: Confirm my account
+    reset_password: Someone has requested a link to change your password. You can do this through the link below.
+    change_password: Change my password
+    msj_password_1: If you didn't request this, please ignore this email.
+    msj_password_2: Your password won't change until you access the link above and create a new one.
+    msj_password_block_1: Your account has been locked due to an excessive number of unsuccessful sign in attempts.
+    msj_password_block_2: Click the link below to unlock your account
+    unlock_account: Unlock my account
   date:
     abbr_day_names:
     - Sun

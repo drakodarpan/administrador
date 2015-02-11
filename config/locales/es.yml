@@ -1,22 +1,44 @@
 es:
   title:
     welcome: Bienvenido
+    hello: Hola
   form_title:
     log_in: Ingresar
     sign_up: Registrarse
+    edit_account: Editar la cuenta de
+    cancel_account: Cancelar la cuenta
+  form_button:
+    sign_in_button: Ingresar
+    sign_up_button: Registrarse
+    update_button: Actualizar
+    edit_profile_button: Editar cuenta
+    exit_account_button: Cerrar sesión
   form_text:
     home: Inicio
     log_in: Iniciar Sesión
-    sign_in: Ingresar
-    sign_up: Registrarse
-    edit_profile: Editar cuenta
-    exit_account: Cerrar sesión
     forgot_pass: Olvidaste tu password?
     no_receive_confirmation: No recibiste la confimación?
     no_receive_unlocked: No recibiste la información para desbloquear?
     sign_in_with: Ingreso como
     remember_me: Recordarme
     password_confirmation: Confirmar password
+    min_characters: caracters minimo
+    name: Nombre
+    password_leave_blank: dejar en blanco, si no se desea cambiar
+    current_password: es necesario su password actual para realizar los cambios
+    question_confirmation: ¿Estas seguro?
+    mensaje_cancel: Al cancelar esta cuenta, ya no se podra ingresar al sistema.
+    password_now: Password actual
+  email_send:
+    msj_email: Puede confirmar su cuenta de correo electrónico a través del siguiente enlace
+    confirm_account: Confirmar cuenta
+    reset_password: Alguien ha pedido un enlace para cambiar tu contraseña. Puede hacerlo a través del siguiente enlace.
+    change_password: Cambiar mi password
+    msj_password_1: Si ústed no lo solicito, ignore este email.
+    msj_password_2: Su contraseña no cambiará hasta que acceda al enlace de arriba y crear una nueva.
+    msj_password_block_1: Tu cuenta ha sido bloqueada debido a un número excesivo de intentos de conexión fallidos.
+    msj_password_block_2: Presiona el siguiente enlace para desbloquear tu cuenta
+    unlock_account: Desbloquear mi cuenta
   date:
     abbr_day_names:
     - dom

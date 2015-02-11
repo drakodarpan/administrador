@@ -1,9 +1,13 @@
-<h1><%= t("title.welcome") %></h1>
+<h1><%= t("title.welcome") %>
+  <% if usuario_signed_in? %>
+    <%= current_usuario.name %>
+  <% end %>
+</h1>
 
 <div class="row">
-    <div class="large-12 columns">
-        <p>
-            <%= image_tag("indice_chat.jpeg", :class => "image_banner") %>
-        </p>
-    </div>
+  <div class="large-12 columns">
+    <p>
+      <%= image_tag("indice_chat.jpeg", :class => "image_banner") %>
+    </p>
+  </div>
 </div>

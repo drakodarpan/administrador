@@ -1,39 +1,98 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
-
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+  <div class="row">
+    <fieldset>
+      <legend>
+        <%= t('form_title.edit_account') %> <%= current_usuario.name %>
+      </legend>
+
+      <div class="large-12 columns">
+        <div class="small-4 columns">
+          <%= f.label :avatar %>
+        </div>
+        <div class="large-8 columns">
+          <%= f.file_field :avatar, :autofocus => true, :class => "form-controll" %>
+        </div>
+      </div>
+
+      <div class="large-12 columns">
+        <div class="large-4 columns">
+          <%= f.label t('form_text.name') %>
+        </div>
+        <div class="large-8 columns">
+          <%= f.text_field :name %>
+        </div>
+      </div>
+
+      <div class="large-12 columns">
+        <div class="large-4 columns">
+          <%= f.label :email %>
+        </div>
+        <div class="large-8 columns">
+          <%= f.email_field :email, autofocus: true %>
+        </div>
+      </div>
+
+      <fieldset>
+        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+        <% end %>
+
+        <div class="large-12 columns">
+          <div class="large-4 columns">
+            <br>
+            <%= f.label :password %>
+          </div>
+          <div class="large-8 columns">
+            <i>(<%= t('form_text.password_leave_blank') %>)</i>
+            <%= f.password_field :password, autocomplete: "off" %>
+          </div>
+        </div>
+
+        <div class="large-12 columns">
+          <div class="large-4 columns">
+            <%= f.label t('form_text.password_confirmation') %>
+          </div>
+          <div class="large-8 columns">
+            <%= f.password_field :password_confirmation, autocomplete: "off" %>
+          </div>
+        </div>
+
+        <div class="large-12 columns">
+          <div class="large-4 columns">
+            <br>
+            <%= f.label t('form_text.password_now') %>
+          </div>
+          <div class="large-8 columns">
+            <i>(<%= t('form_text.current_password') %>)</i>
+            <%= f.password_field :current_password, autocomplete: "off" %>
+          </div>
+        </div>
+      </fieldset>
+
+      <div class="actions large-8 small-6 columns right">
+        <%= f.submit t("form_button.update_button"), :id => "myButton" %>
+      </div>
+
+    </fieldset>
   </div>
 
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
 <% end %>
 
-<h3>Cancel my account</h3>
+<div class="row">
+  <fieldset>
+      <h3><%= t('form_title.cancel_account') %></h3>
 
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+      <p>
+        <%= t('form_text.mensaje_cancel') %>
+      </p>
 
-<%= link_to "Back", :back %>
+      <%= button_to t("form_title.cancel_account"),
+          registration_path(resource_name),
+          data: { confirm: t('form_text.question_confirmation') },
+          method: :delete, :id => "myButton" %>
+
+      <%= link_to "Back", :back %>
+  </fieldset>
+</div>

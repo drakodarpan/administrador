@@ -1,44 +1,65 @@
-<div class="row">
-  <div class="large-12 columns">
-    <h2><%= t("form_title.sign_up") %></h2>
-  </div>
-</div>
-
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
-  <div class="row">
-    <div class="small-4 columns">
-      <%= f.label :avatar %>
+    <div class="row">
+      <fieldset>
+        <legend>
+          <%= t("form_title.sign_up") %>
+        </legend>
+
+        <div class="large-12 columns">
+          <div class="small-4 columns">
+            <%= f.label :avatar %>
+          </div>
+          <div class="large-8 columns">
+            <%= f.file_field :avatar, :autofocus => true, :class => "form-controll" %>
+          </div>
+        </div>
+
+        <div class="large-12 columns">
+          <div class="large-4 columns">
+            <%= f.label t('form_text.name') %>
+          </div>
+          <div class="large-8 columns">
+            <%= f.text_field :name, :placeholder => t('form_text.name') %>
+          </div>
+        </div>
+
+        <div class="large-12 columns">
+          <div class="large-4 columns">
+            <%= f.label :email %>
+          </div>
+          <div class="large-8 columns">
+            <%= f.email_field :email, :placeholder => :email.capitalize %>
+          </div>
+        </div>
+
+        <div class="large-12 columns">
+          <div class="large-4 columns">
+            <%= f.label :password %>
+            <% if @validatable %>
+            <em>(<%= @minimum_password_length %> <%= t('form_text.min_characters') %> )</em>
+            <% end %>
+          </div>
+          <div class="large-8 columns">
+            <%= f.password_field :password, autocomplete: "off", :placeholder => :password.capitalize %>
+          </div>
+        </div>
+
+        <div class="large-12 columns">
+          <div class="large-4 columns">
+            <%= f.label t('form_text.password_confirmation') %><br />
+          </div>
+          <div class="large-8 columns">
+            <%= f.password_field :password_confirmation, autocomplete: "off", :placeholder => t('form_text.password_confirmation') %>
+          </div>
+        </div>
+
+        <div class="actions large-8 columns">
+          <%= f.submit t("form_button.sign_up_button"), :id => "myButton" %>
+        </div>
+      </fieldset>
     </div>
-    <div class="small-8 columns">
-      <%= f.file_field :avatar, :autofocus => true, :class => "form-controll" %>
-    </div>
-
-    <div class="large-12 columns">
-      <div class="field">
-        <%= f.label :email %><br />
-        <%= f.email_field :email, :placeholder => :email.capitalize %>
-      </div>
-
-      <div class="field">
-        <%= f.label :password %>
-        <% if @validatable %>
-        <em>(<%= @minimum_password_length %> characters minimum)</em>
-        <% end %><br />
-        <%= f.password_field :password, autocomplete: "off", :placeholder => :password.capitalize %>
-      </div>
-
-      <div class="field">
-        <%= f.label :password_confirmation %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "off", :placeholder => t('form_text.password_confirmation').to_s.split('_').map(&:titleize) %>
-      </div>
-
-      <div class="actions">
-        <%= f.submit t("form_text.sign_up") %>
-      </div>
-    </div>
-  </div>
 
 <% end %>
 
@@ -48,4 +69,3 @@
     <%= render "devise/shared/links" %>
   </div>
 </div>
-
