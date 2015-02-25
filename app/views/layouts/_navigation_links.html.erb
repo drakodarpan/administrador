@@ -1,13 +1,15 @@
 <li class="divider"></li>
 <% if usuario_signed_in? %>
-<li class="has-dropdown">
-  <a href="#"><%= image_tag current_usuario.avatar, :class => "image-decoration" %></a>
-  <ul class="dropdown">
-    <li><%= link_to t("form_button.edit_profile_button"), edit_usuario_registration_path %></li>
-    <li class="divider"></li>
-    <li><%= link_to t("form_button.exit_account_button"), destroy_usuario_session_path, method: :delete%></li>
-  </ul>
-</li>
+  <li><%= link_to "Comentarios", comentario_index_path %></li>
+  <li class="divider"></li>
+  <li class="has-dropdown">
+    <a href="#"><%= image_tag current_usuario.avatar, :class => "image-decoration" %></a>
+    <ul class="dropdown">
+      <li><%= link_to t("form_button.edit_profile_button"), edit_usuario_registration_path %></li>
+      <li class="divider"></li>
+      <li><%= link_to t("form_button.exit_account_button"), destroy_usuario_session_path, method: :delete%></li>
+    </ul>
+  </li>
 <% else %>
   <li class="divider"></li>
   <li><%= link_to t("form_button.sign_in_button"), new_usuario_session_path %></li>

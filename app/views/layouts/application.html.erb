@@ -19,6 +19,24 @@
 
     <main>
       <%= render 'layouts/messages' %>
+
+      <div class="row small-4 large-3 columns">
+        <% if usuario_signed_in? %>
+
+            <div>
+              <div class="panel">
+                <%= image_tag("comentario.jpg") %>
+                <h5><a href="#">Comentarios</a></h5>
+                <div class="section-container vertical-nav" data-section data-options="deep_linking: false; one_up:true">
+                  <section class="section">
+                    <h5 class="title"><%= link_to "Nuevo comentario", new_comentario_path %></h5>
+                  </section>
+                </div>
+              </div>
+            </div>
+
+        <% end %>
+      </div>
       <%= yield %>
     </main>
 
