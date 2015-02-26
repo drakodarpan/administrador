@@ -1,0 +1,19 @@
+<div class="row">
+
+  <div class="large-9 columns">
+    <% @all_comments.each do |comment| %>
+      <div class="row">
+        <div class="large-2 columns small-3">
+          <%= image_tag(current_usuario.avatar) %>
+        </div>
+
+        <div class="large-10 columns">
+          <p>
+            <strong><%= current_usuario.name %> dice: <%= comment.comentario %> </strong>
+          </p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+</div>

@@ -1,6 +1,6 @@
 <li class="divider"></li>
 <% if usuario_signed_in? %>
-  <li><%= link_to "Comentarios", comentario_index_path %></li>
+  <li><%= link_to "Comentarios", comentarios_path('index') %></li>
   <li class="divider"></li>
   <li class="has-dropdown">
     <a href="#"><%= image_tag current_usuario.avatar, :class => "image-decoration" %></a>

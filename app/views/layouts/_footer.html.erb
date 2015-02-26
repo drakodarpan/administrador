@@ -1,20 +1,22 @@
 <div class="row">
-    <div class="large-12 columns">
-      <hr/>
+  <hr/>
 
-      <div class="inline-list left small-5 columns">
-        <%= image_tag("bandera-usa.jpg", :class => "image_banderas") %>
-        <%= link_to_unless_current "English", locale: "en" %> |
-        <%= image_tag("bandera-mexico.jpeg", :class => "image_banderas") %>
-        <%= link_to_unless_current "Español", locale: "es" %>
-      </div>
-
-      <ul class="inline-list right">
-        <li><%= link_to t("form_text.home"), root_path %></li>
-        <% unless usuario_signed_in? %>
-          <li><%= link_to t("form_button.sign_in_button"), new_usuario_session_path %></li>
-          <li><%= link_to t("form_button.sign_up_button"), new_usuario_registration_path %></li>
-        <% end %>
-      </ul>
+  <div class="small-6 large-6 columns">
+    <div class="inline-list left">
+      <%= image_tag("bandera-usa.jpg", :class => "image_banderas") %>
+      <%= link_to_unless_current "English", locale: "en" %> |
+      <%= image_tag("bandera-mexico.jpeg", :class => "image_banderas") %>
+      <%= link_to_unless_current "Español", locale: "es" %>
     </div>
+  </div>
+
+  <div class="small-6 large-6 columns">
+    <ul class="inline-list right">
+      <li><%= link_to t("form_text.home"), root_path %></li>
+      <% unless usuario_signed_in? %>
+      <li><%= link_to t("form_button.sign_in_button"), new_usuario_session_path %></li>
+      <li><%= link_to t("form_button.sign_up_button"), new_usuario_registration_path %></li>
+      <% end %>
+    </ul>
+  </div>
 </div>

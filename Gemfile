@@ -21,11 +21,15 @@ group :development do
   gem 'foundation-rails'
   gem 'figaro'
   gem 'pundit'
+  gem 'better_errors'
 end
 
 gem 'paperclip' #, :git => "git://github.com/thoughtbot/paperclip.git"
 gem 'i18n', '~> 0.7.0'
-gem 'better_errors'
+gem 'activerecord-tableless'
+gem 'gibbon'
+gem 'high_voltage'
+gem 'simple_form'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin]

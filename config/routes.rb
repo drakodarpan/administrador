@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :usuarios
-  resource :usuarios
-  resources :comentario
+  resources :usuarios
+  resources :comentarios
 
   root :to => 'home#index'
 end

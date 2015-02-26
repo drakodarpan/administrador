@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+
+<%= @new_comment.each do |comment| %>
+  <p>
+    <strong>Comentario:</strong>
+    <%= comment.comentario %>
+  </p>
+<% end %>
+
+<%= link_to 'Edit', edit_comentrio_path(@micropost) %> |
+<%= link_to 'Back', comentarios_path %>
