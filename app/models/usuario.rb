@@ -13,4 +13,7 @@ class Usuario < ActiveRecord::Base
   validates_attachment :avatar,
                        :size => { :in => 0..30.kilobytes },
                        :content_type => { :content_type => /\Aimage\/.*\Z/ }
+
+  # Description
+  validates :description, length: { maximum: 200 }
 end

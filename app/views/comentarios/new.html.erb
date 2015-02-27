@@ -1,10 +1,1 @@
-<div class="row small-6 large-9 columns">
-  <h3>Alta de comentarios</h3>
-  <div class="form large-11 columns">
-    <%= simple_form_for @new_comment do |form| %>
-    <%= form.input :comentario, autofocus: true, as: :text %>
-    <%= form.input :usuario_id %>
-    <%= form.button :submit, 'Submit', :id => "myButton" %>
-    <% end %>
-  </div>
-</div>
+<%= render 'comentarios/form_comentarios' %>

@@ -25,6 +25,8 @@ en:
     password_confirmation: Password confirmation
     min_characters: characters minimum
     name: Name
+    description: Description
+    max_text_description: 200 characters maximum
     password_leave_blank: leave blank if you don't want to change it
     current_password: we need your current password to confirm your changes
     question_confirmation: Are you sure?

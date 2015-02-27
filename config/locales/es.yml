@@ -24,6 +24,8 @@ es:
     password_confirmation: Confirmar password
     min_characters: caracters minimo
     name: Nombre
+    description: Descripcion
+    max_text_description: 200 caracteres máximo
     password_leave_blank: dejar en blanco, si no se desea cambiar
     current_password: es necesario su password actual para realizar los cambios
     question_confirmation: ¿Estas seguro?
@@ -159,7 +161,7 @@ es:
       restrict_dependent_destroy:
         one: "El registro no puede ser eliminado pues existe un %{record} dependiente"
         many: "El registro no puede ser eliminado pues existen %{record} dependientes"
-      taken: ya ha sido tomado
+      taken: ya existe
       too_long:
         one: es demasiado largo (máximo 1 caracter)
         other: es demasiado largo (máximo %{count} caracteres)

@@ -2,17 +2,33 @@
 
   <div class="large-9 columns">
     <% @all_comments.each do |comment| %>
-      <div class="row">
-        <div class="large-2 columns small-3">
-          <%= image_tag(current_usuario.avatar) %>
-        </div>
-
-        <div class="large-10 columns">
-          <p>
-            <strong><%= current_usuario.name %> dice: <%= comment.comentario %> </strong>
-          </p>
-        </div>
+    <div class="row">
+      <div class="large-2 columns small-3">
+        <%= image_tag(comment.avatar) %>
       </div>
+
+      <div class="large-10 columns">
+        <p>
+          <strong>
+            <%= comment.name %> dice:
+            <%= comment.comentarios %>
+          </strong>
+        </p>
+
+        <ul class="inline-list">
+          <li>
+            <%# if current_usuario.id == comment.usuario_id %>
+            <%#= link_to 'Editar comentario', edit_comentario_path(comment.id) %>
+            <%# else %>
+            <%= link_to 'Contestar', edit_comentario_path(comment.id) %>
+            <%# end %>
+          </li>
+          <li>
+            <%= link_to 'Ver', controller: :comentarios, action: :show, id: comment.id %>
+          </li>
+        </ul>
+      </div>
+    </div>
     <% end %>
   </div>
 

@@ -1,14 +1,12 @@
 class UsuariosController < ApplicationController
+  before_filter :authenticate_usuario!, only: [:index, :show]
+
   def index
-    @usuarios = Usuarios.all
+    @usuarios = Usuario.all
   end
 
   def show
+    @show_user = Usuario.find(params[:id])
   end
 
-  def update
-  end
-
-  def destroy
-  end
 end
