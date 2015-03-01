@@ -4,7 +4,7 @@ class ComentariosController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :invalid_comments
 
   def index
-    @all_comments = Usuario.all #.where(:usuario_id => current_usuario) # Comentario.all
+    @all_comments = Usuario.all
   end
 
   def new
@@ -15,7 +15,8 @@ class ComentariosController < ApplicationController
     @new_comment = Comentario.new(secure_params)
 
     if @new_comment.valid?
-      flash[:notice] = "Message sent from #{@new_comment.comentario}"
+      @new_comment.save
+      flash[:notice] = "El comentario #{@new_comment.comentario} se dio de alta..."
       redirect_to comentarios_path
     else
       render :new
@@ -37,14 +38,23 @@ class ComentariosController < ApplicationController
       @update_comment.update(secure_params)
       redirect_to comentarios_path
     else
-      flash[:notice] = "Error al actualizar la información de #{@update_comment.comentario}"
-      reder :edit
+      flash[:notice] = "Error al actualizar el comentario #{@update_comment.comentario}"
+      render :edit
     end
   end
 
   private
     def secure_params
-      params.require(:comentario).permit(:comentario, :usuario_id)
+
+      parameters = params.require(:comentario).permit(:comentario, :usuario_id)
+      parameters[:usuario_id]
+
+=begin
+      usuario_id = current_usuario.id
+      params = ActionController::Parameters.new(usuario_id: current_usuario.id)
+      Rails.logger.debug "#{usuario_id} es igual a #{current_usuario.id}"
+      params.require(:comentario).permit(:comentario, usuario_id: { usuario_id: current_usuario.id })
+=end
     end
 
     def invalid_comments

@@ -1,3 +1,4 @@
+<h1>Comentarios de los usuarios:</h1>
 <div class="row">
 
   <div class="large-9 columns">
@@ -11,7 +12,9 @@
         <p>
           <strong>
             <%= comment.name %> dice:
-            <%= comment.comentarios %>
+            <% unless comment.comentarios.empty? %>
+              <%= comment.comentarios %>
+            <% end %>
           </strong>
         </p>
 
