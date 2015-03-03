@@ -20,10 +20,12 @@
           </p>
 
           <p>
-            <%= users.description[0..30] %>
-            <strong>
-              <%= link_to '...', controller: :usuarios, action: :show, id: users.id %>
-            </strong>
+            <% unless users.description.nil? %>
+              <%= users.description[0..30] %>
+              <strong>
+                <%= link_to '...', controller: :usuarios, action: :show, id: users.id %>
+              </strong>
+            <% end %>
           </p>
         </div>
       </div>

@@ -1,10 +1,10 @@
 #language: utf-8
 class ComentariosController < ApplicationController
-  before_filter :authenticate_usuario!, only: [:index, :show, :new, :create]
+  before_filter :authenticate_usuario!, only: [:index, :show, :new, :create, :update, :edit]
   rescue_from ActiveRecord::RecordNotFound, with: :invalid_comments
 
   def index
-    @all_comments = Usuario.all
+    @all_usuarios = Usuario.all
   end
 
   def new
@@ -12,7 +12,8 @@ class ComentariosController < ApplicationController
   end
 
   def create
-    @new_comment = Comentario.new(secure_params)
+    @usuario = Usuario.find(current_usuario.id)
+    @new_comment = @usuario.comentarios.new(secure_params)
 
     if @new_comment.valid?
       @new_comment.save
@@ -36,6 +37,7 @@ class ComentariosController < ApplicationController
     @update_comment = Comentario.find(params[:id])
     if @update_comment.valid?
       @update_comment.update(secure_params)
+      flash[:notice] = "El comentario se actualizo correctamente..."
       redirect_to comentarios_path
     else
       flash[:notice] = "Error al actualizar el comentario #{@update_comment.comentario}"
@@ -45,16 +47,7 @@ class ComentariosController < ApplicationController
 
   private
     def secure_params
-
-      parameters = params.require(:comentario).permit(:comentario, :usuario_id)
-      parameters[:usuario_id]
-
-=begin
-      usuario_id = current_usuario.id
-      params = ActionController::Parameters.new(usuario_id: current_usuario.id)
-      Rails.logger.debug "#{usuario_id} es igual a #{current_usuario.id}"
-      params.require(:comentario).permit(:comentario, usuario_id: { usuario_id: current_usuario.id })
-=end
+      params.require(:comentario).permit(:comentario)
     end
 
     def invalid_comments

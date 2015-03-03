@@ -1,8 +1,21 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Comentario:</strong>
-  <%= @show_comment.comentario %>
-</p>
+<div class="row small-6 large-9 columns">
 
-<%= link_to 'Back', comentarios_path %>
+  <div class="large-10 columns">
+
+    <p>
+      <strong>Comentario:</strong>
+      <br>
+      <%= @show_comment.comentario %>
+      <hr>
+
+      <% t = @show_comment.created_at %>
+      <%= t.day.to_s + " " + t.strftime("%b") + " " + t.strftime("%Y") %>
+    </p>
+
+    <%= link_to 'Atras', comentarios_path %>
+
+  </div>
+
+</div>

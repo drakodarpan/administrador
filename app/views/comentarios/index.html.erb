@@ -2,34 +2,44 @@
 <div class="row">
 
   <div class="large-9 columns">
-    <% @all_comments.each do |comment| %>
+    <% @all_usuarios.each do |usuario| %>
     <div class="row">
       <div class="large-2 columns small-3">
-        <%= image_tag(comment.avatar) %>
+        <%= image_tag(usuario.avatar) %>
       </div>
 
       <div class="large-10 columns">
-        <p>
-          <strong>
-            <%= comment.name %> dice:
-            <% unless comment.comentarios.empty? %>
-              <%= comment.comentarios %>
-            <% end %>
-          </strong>
-        </p>
 
-        <ul class="inline-list">
-          <li>
-            <%# if current_usuario.id == comment.usuario_id %>
-            <%#= link_to 'Editar comentario', edit_comentario_path(comment.id) %>
-            <%# else %>
-            <%= link_to 'Contestar', edit_comentario_path(comment.id) %>
-            <%# end %>
-          </li>
-          <li>
-            <%= link_to 'Ver', controller: :comentarios, action: :show, id: comment.id %>
-          </li>
-        </ul>
+          <% usuario.comentarios.each do |cm| %>
+            <p>
+              <strong>
+                <%= usuario.name %> dice:
+                <br>
+              </strong>
+
+              <% unless cm.comentario.empty? %>
+                <%= cm.comentario[0..30] %>
+                <% if cm.comentario.length > 30 %>
+                  ...
+                <% end %>
+              <% end %>
+            </p>
+
+            <ul class="inline-list">
+              <li>
+                <% if current_usuario.id == usuario.id %>
+                  <%= link_to 'Editar', edit_comentario_path(cm.id) %>
+                <% else %>
+                  <%= link_to 'Contestar', new_comentario_path %>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to 'Ver', controller: :comentarios, action: :show, id: cm.id %>
+              </li>
+            </ul>
+
+          <% end %>
+
       </div>
     </div>
     <% end %>

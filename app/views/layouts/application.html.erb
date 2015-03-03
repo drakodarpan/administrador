@@ -26,10 +26,15 @@
             <div class="panel">
               <%= image_tag("comentario.jpg") %>
               <h5><%= link_to "Usuarios", usuarios_path('index') %></h5>
-              <h5><%= link_to "Comentarios", comentarios_path('index') %></h5>
+              <h5>
+                <%= link_to "Comentarios", comentarios_path('index') %>
+              </h5>
+
               <div class="section-container vertical-nav" data-section data-options="deep_linking: false; one_up:true">
                 <section class="section">
-                  <h5 class="title"><%= link_to "Nuevo comentario", new_comentario_path %></h5>
+                  <h5 class="title">
+                    <%= link_to "Nuevo comentario", new_comentario_path %>
+                  </h5>
                 </section>
               </div>
             </div>
