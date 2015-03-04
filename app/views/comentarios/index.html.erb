@@ -30,7 +30,7 @@
                 <% if current_usuario.id == usuario.id %>
                   <%= link_to 'Editar', edit_comentario_path(cm.id) %>
                 <% else %>
-                  <%= link_to 'Contestar', new_comentario_path %>
+                  <%= link_to 'Contestar', new_responder_comentarios_path %>
                 <% end %>
               </li>
               <li>
