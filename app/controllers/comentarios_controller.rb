@@ -27,6 +27,7 @@ class ComentariosController < ApplicationController
 
   def show
     @show_comment = Comentario.find(params[:id])
+    @usuario_comment = Usuario.where(id: @show_comment.usuario_id)
   end
 
   def edit
@@ -51,6 +52,6 @@ class ComentariosController < ApplicationController
     end
 
     def invalid_comments
-      redirect_to comentarios_path, notice: '¡¡¡Problema con los comentarios!!!'
+      redirect_to root_path, notice: '¡¡¡Problema con los comentarios!!!'
     end
 end

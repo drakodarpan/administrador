@@ -32,6 +32,7 @@ en:
     question_confirmation: Are you sure?
     mensaje_cancel: To cancel this account may no longer enter the system.
     password_now: Current password
+    back: Back
   email_send:
     msj_email: You can confirm your account email through the link below
     confirm_account: Confirm my account

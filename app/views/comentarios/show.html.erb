@@ -5,8 +5,16 @@
   <div class="large-10 columns">
 
     <p>
-      <strong>Comentario:</strong>
-      <br>
+      <strong>
+        Comentario:
+        <br>
+        <% @usuario_comment.each do |usuario| %>
+          Autor: <%= usuario.name %>
+          <br>
+        <% end %>
+        <br>
+      </strong>
+
       <%= @show_comment.comentario %>
       <hr>
 
@@ -14,7 +22,7 @@
       <%= t.day.to_s + " " + t.strftime("%b") + " " + t.strftime("%Y") %>
     </p>
 
-    <%= link_to 'Atras', comentarios_path %>
+    <%= link_to t('form_text.back'), :back %>
 
   </div>
 
