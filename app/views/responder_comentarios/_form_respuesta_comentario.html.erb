@@ -1,7 +1,13 @@
 <div class="row small-6 large-9 columns">
-  <h3>Respuesta a comentario:</h3>
   <div class="form large-11 columns">
-    <%= @comentario %>
+
+    <% @comentario_act.each do |cm| %>
+      <h3>Respuesta al comentario " <%= cm.comentario.capitalize %> ":</h3>
+      <%= hidden_field :comentario_id, :value => cm.id %>
+    <% end %>
+
+    <br>
+
     <%= simple_form_for @respon_comentario do |form| %>
       <%= form.input :respuesta_comentario, autofocus: true, as: :text, :maxlenght => 200 %>
       <%= form.button :submit, 'Submit', id: "myButton" %>

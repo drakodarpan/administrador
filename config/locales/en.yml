@@ -25,6 +25,7 @@ en:
     password_confirmation: Password confirmation
     min_characters: characters minimum
     name: Name
+    apellido: Last name
     description: Description
     max_text_description: 200 characters maximum
     password_leave_blank: leave blank if you don't want to change it

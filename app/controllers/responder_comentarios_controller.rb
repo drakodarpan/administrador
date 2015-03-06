@@ -4,18 +4,28 @@ class ResponderComentariosController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :invalid_responds
 
   def new
-    #@comentario_act = Comentario.find(params[:id])
+    @comentario_act = Comentario.where(id: params[:comentario_id])
     @respon_comentario = ResponderComentario.new
   end
 
   def create
-    #@comentario = Comentario.find(comentario.id)
-    @new_respond = ResponderComentario.new(secure_params)
+    @comentario = Comentario.find(1)
+    @new_respond = @comentario.responder_comentarios.new(secure_params)
+
+    if @new_respond.valid?
+      @new_respond.save
+      flash[:notice] = "La respuesta se grabo correctamente..."
+      redirect_to comentarios_path
+    else
+      render :new
+    end
+
   end
 
   private
     def secure_params
-      params.require(:responder_comentarios).permit(:respuesta_comentario, :comentario_id => @comentario_act )
+      Rails.logger.debug "#{:comentario_id}"
+      params.require(:responder_comentarios).permit(:respuesta_comentario, :comentario_id)
     end
 
     def invalid_responds

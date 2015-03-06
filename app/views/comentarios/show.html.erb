@@ -18,8 +18,11 @@
       <%= @show_comment.comentario %>
       <hr>
 
-      <% t = @show_comment.created_at %>
-      <%= t.day.to_s + " " + t.strftime("%b") + " " + t.strftime("%Y") %>
+      <%# t = @show_comment.created_at %>
+      <%#= t.day.to_s + " " + t.strftime("%b") + " " + t.strftime("%Y") %>
+      <p>
+        <em><%= @show_comment.created_at.strftime("%d - %b - %Y [%H:%M]") %></em>
+      </p>
     </p>
 
     <%= link_to t('form_text.back'), :back %>

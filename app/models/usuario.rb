@@ -1,3 +1,4 @@
+#language: utf-8
 class Usuario < ActiveRecord::Base
   has_many :comentarios
   # Include default devise modules. Others available are:
@@ -16,4 +17,17 @@ class Usuario < ActiveRecord::Base
 
   # Description
   validates :description, length: { maximum: 200 }
+  validates :name,
+             length: { minimum: 5 }, # Lo deje en 5 por nombres como David, Laura, etc..
+             presence: true,
+             uniqueness: true
+
+  validates :apellido,
+             presence: true
+
+  # Se anexa, aunque no es necesario, puesto que devise realiza dicha validación del email
+  validates :email,
+             format: { with: /\A[^@\s]+@([^@.\s]+\.)+[^@.\s]+\z/ },
+             uniqueness: true
+
 end
