@@ -25,7 +25,7 @@ class ResponderComentariosController < ApplicationController
   private
     def secure_params
       Rails.logger.debug "#{:comentario_id}"
-      params.require(:responder_comentarios).permit(:respuesta_comentario, :comentario_id)
+      params.require(:responder_comentarios).permit(:respuesta_comentario)
     end
 
     def invalid_responds

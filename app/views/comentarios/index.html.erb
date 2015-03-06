@@ -18,12 +18,8 @@
                 <br>
               </strong>
 
-              <% unless cm.comentario.empty? %>
-                <%= cm.comentario[0..30] %>
-                <% if cm.comentario.length > 30 %>
-                  ...
-                <% end %>
-              <% end %>
+              <%= mostrar_comentarios(cm.comentario) %>
+
             </p>
 
             <ul class="inline-list">
