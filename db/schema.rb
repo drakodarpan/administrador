@@ -14,7 +14,7 @@
 ActiveRecord::Schema.define(version: 20150305190321) do
 
   create_table "comentarios", force: :cascade do |t|
-    t.string   "comentario"
+    t.text     "comentario"
     t.integer  "usuario_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 20150305190321) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
-    t.string   "description"
+    t.text     "description"
     t.string   "apellido"
   end
 

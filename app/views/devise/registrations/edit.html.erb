@@ -39,8 +39,8 @@
           <%= f.label t('form_text.description') %>
         </div>
         <div class="large-8 columns">
-          <em>(<%= t('form_text.max_text_description') %> )</em>
-          <%= f.text_area :description %>
+          
+          <%= f.text_area :description, :class => "ckeditor" %>
         </div>
       </div>
 

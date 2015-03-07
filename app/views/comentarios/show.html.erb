@@ -15,7 +15,7 @@
         <br>
       </strong>
 
-      <%= @show_comment.comentario %>
+      <%= sanitize @show_comment.comentario %>
       <hr>
 
       <p>
@@ -24,6 +24,7 @@
     </p>
 
     <%= link_to t('form_text.back'), :back %>
+    <%#= buttons_back(t('form_text.back'), "history.back()", "myButton") %>
 
   </div>
 

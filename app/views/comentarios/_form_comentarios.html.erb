@@ -2,9 +2,14 @@
   <h3>Alta de comentarios:</h3>
   <div class="form large-11 columns">
 
-    <%= simple_form_for @comment do |form| %>
-    <%= form.input :comentario, autofocus: true, as: :text %>
-    <%= form.button :submit, 'Submit', :id => "myButton" %>
+    <%#= simple_form_for @comment do |form| %>
+    <%#= form.input :comentario, autofocus: true, as: :text, :class => "ckeditor" %>
+    <%#= form.button :submit, 'Submit', :id => "myButton" %>
+    <%# end %>
+
+    <%= form_for @comment do |f| %>
+      <%= f.text_area :comentario, :col => 120, :row => 4, :class => "ckeditor" %>
+      <%= f.submit 'Submit', class: "myButton" %>
     <% end %>
 
     <%= link_to t("form_text.back"), :back %>

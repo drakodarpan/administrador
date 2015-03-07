@@ -16,9 +16,9 @@ class Usuario < ActiveRecord::Base
                        :content_type => { :content_type => /\Aimage\/.*\Z/ }
 
   # Description
-  validates :description, length: { maximum: 200 }
+  #validates :description, length: { maximum: 200 }
   validates :name,
-             length: { minimum: 5 }, # Lo deje en 5 por nombres como David, Laura, etc..
+             length: { minimum: 3 }, # Lo deje en 5 por nombres como David, Laura, etc..
              presence: true,
              uniqueness: true
 

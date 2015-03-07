@@ -30,6 +30,7 @@ gem 'activerecord-tableless'
 gem 'gibbon'
 gem 'high_voltage'
 gem 'simple_form'
+gem 'ckeditor_rails'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin]

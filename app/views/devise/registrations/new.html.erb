@@ -27,7 +27,7 @@
 
         <div class="large-12 columns">
           <div class="large-4 columns">
-            <%= f.label t('form_text.name') %>
+            <%= f.label t('form_text.apellido') %>
           </div>
           <div class="large-8 columns">
             <%= f.text_field :apellido, :placeholder => t('form_text.apellido') %>
@@ -39,8 +39,8 @@
             <%= f.label t('form_text.description') %>
           </div>
           <div class="large-8 columns">
-            <em>(<%= t('form_text.max_text_description') %> )</em>
-            <%= f.text_area :description, :placeholder => t('form_text.description') %>
+            
+            <%= f.text_area :description, :placeholder => t('form_text.description'), :class => "ckeditor" %>
           </div>
         </div>
 
