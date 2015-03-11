@@ -1,0 +1,51 @@
+= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+  = devise_error_messages!
+  .row
+    %fieldset
+      %legend
+        = t("form_title.sign_up")
+      .large-12.columns
+        .small-4.columns
+          = f.label :avatar
+        .large-8.columns
+          = f.file_field :avatar, :autofocus => true, :class => "form-controll"
+        .large-12.columns
+          .large-4.columns
+            = f.label t('form_text.name')
+          .large-8.columns
+            = f.text_field :name, :placeholder => t('form_text.name')
+        .large-12.columns
+          .large-4.columns
+            = f.label t('form_text.apellido')
+          .large-8.columns
+            = f.text_field :apellido, :placeholder => t('form_text.apellido')
+        .large-12.columns
+          .large-4.columns
+            = f.label t('form_text.description')
+          .large-8.columns
+            = f.text_area :description, :placeholder => t('form_text.description'), :class => "ckeditor"
+        .large-12.columns
+          %br
+          .large-4.columns
+            = f.label :email
+          .large-8.columns
+            = f.email_field :email, :placeholder => :email.capitalize
+        .large-12.columns
+          .large-4.columns
+            = f.label :password
+            - if @validatable
+              %em
+                (#{@minimum_password_length} #{t('form_text.min_characters')} )
+          .large-8.columns
+            = f.password_field :password, autocomplete: "off", :placeholder => :password.capitalize
+        .large-12.columns
+          .large-4.columns
+            = f.label t('form_text.password_confirmation')
+          .large-8.columns
+            = f.password_field :password_confirmation, autocomplete: "off", :placeholder => t('form_text.password_confirmation')
+        .actions.large-8.columns
+          = f.submit t("form_button.sign_up_button"), :id => "myButton"
+.row
+  .large-12.columns
+  %br
+    = render "devise/shared/links"

@@ -1,0 +1,27 @@
+%h3 Detalles del usuario:
+.row.large-9.columns
+
+  .large-11.columns.panel.callout.radius
+    .large-3.columns
+      = image_tag @show_user.avatar
+
+    .large-9.columns
+      %h3 Nombre:
+      = @show_user.name
+
+      %hr
+
+      %h3 Apellido:
+      = @show_user.apellido
+
+      %hr
+
+      %h3 Email:
+      = @show_user.email
+
+      %hr
+
+      %h3 Descripcion:
+      = mostrar_comentarios(@show_user.description, 1)
+
+    = link_to 'Atras', :back

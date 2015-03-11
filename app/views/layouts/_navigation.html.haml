@@ -1,0 +1,11 @@
+%nav.top-bar{"aria-hidden" => "true", "data-topbar" => "", "data-no-turbolink" => "", :role => "navigation", "data-options" => "sticky_on: large"}
+  %ul.title-area
+    %li.name
+      %h1
+        = link_to t("form_text.home"), root_path
+    %li.toggle-topbar.menu-icon
+      %a{:href => "#"}
+        %span Menu
+  %section.top-bar-section
+    %ul.right
+      = render 'layouts/navigation_links'

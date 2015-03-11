@@ -1,0 +1,13 @@
+%li.divider
+- if usuario_signed_in?
+  %li.has-dropdown
+    %a{:href => "#"}= image_tag current_usuario.avatar, :class => "image-decoration"
+    %ul.dropdown
+      %li= link_to t("form_button.edit_profile_button"), edit_usuario_registration_path
+      %li.divider
+      %li= link_to t("form_button.exit_account_button"), destroy_usuario_session_path, method: :delete
+- else
+  %li.divider
+  %li= link_to t("form_button.sign_in_button"), new_usuario_session_path
+  %li.divider
+  %li= link_to t("form_button.sign_up_button"), new_usuario_registration_path

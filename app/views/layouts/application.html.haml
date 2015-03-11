@@ -1,0 +1,31 @@
+!!! 5
+%html{:lang => "en"}
+  %head
+    %meta{:charset => "utf-8"}
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}
+    %title= content_for?(:title) ? yield(:title) : "Administrador"
+    = stylesheet_link_tag    "application"
+    = javascript_include_tag "vendor/modernizr"
+    = javascript_include_tag "application", 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body
+    %header
+      = render 'layouts/navigation'
+    %main
+      = render 'layouts/messages'
+      -if usuario_signed_in?
+        .row.small-12.large-3.columns
+          %div
+            .panel
+              = image_tag("comentario.jpg")
+              %h5
+                = link_to "Usuarios", usuarios_path('index')
+              %h5
+                = link_to "Comentarios", comentarios_path('index')
+              .section-container.vertical-nav{"data-options" => "deep_linking: false; one_up:true", "data-section" => ""}
+                %section.section
+                  %h5.title
+                    = link_to "Nuevo comentario", new_comentario_path
+      = yield
+    %footer
+      = render 'layouts/footer'
