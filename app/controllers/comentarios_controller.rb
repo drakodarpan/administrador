@@ -17,12 +17,11 @@ class ComentariosController < ApplicationController
 
     if @new_comment.valid?
       @new_comment.save
-      flash[:notice] = "El comentario #{@new_comment.comentario} se dio de alta..."
+      flash[:notice] = "El comentario: #{@new_comment.comentario} se dio de alta..."
       redirect_to comentarios_path
     else
       render :new
     end
-
   end
 
   def show

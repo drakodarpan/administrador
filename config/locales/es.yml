@@ -1,6 +1,6 @@
 es:
   title:
-    welcome: Bienvenido
+    welcome: Bienvenido(a)
     hello: Hola
   form_title:
     log_in: Ingresar
@@ -33,6 +33,11 @@ es:
     mensaje_cancel: Al cancelar esta cuenta, ya no se podra ingresar al sistema.
     password_now: Password actual
     back: Atras
+  view:
+    pagination:
+      previous: "&lt; Anterior"
+      next: "Siguiente &gt;"
+      truncate: "&hellip;"
   email_send:
     msj_email: Puede confirmar su cuenta de correo electrónico a través del siguiente enlace
     confirm_account: Confirmar cuenta

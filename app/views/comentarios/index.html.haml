@@ -1,0 +1,32 @@
+%h1 Comentarios de los usuarios:
+.row
+  .large-9.columns
+    - @all_usuarios.each do |usuario|
+      /- @all_comentarios = usuario.comentarios.page(params[:page]).per(5)
+      - @all_comentarios = @all_usuarios.order("name").page(params[:page]).per(1)
+      = paginate @all_comentarios
+      /- @all_comentarios.each do |cm|
+      - usuario.comentarios.each do |cm|
+        .row
+          .large-2.columns.small-3
+            = image_tag(usuario.avatar) unless cm.comentario.empty?
+          .large-10.columns
+          %p
+            %strong
+              = usuario.name
+              dice:
+              %br
+            = mostrar_comentarios(cm.comentario, 0)
+            %ul.inline-list
+              %li
+                - if current_usuario.id == usuario.id
+                  = link_to 'Editar',           |
+                    edit_comentario_path(cm.id) |
+                - else
+                  = link_to 'Contestar',                                 |
+                    new_responder_comentarios_path(comentario_id: cm.id) |
+              %li
+                = link_to 'Ver',            |
+                  controller: :comentarios, |
+                  action: :show,            |
+                  id: cm.id                 |

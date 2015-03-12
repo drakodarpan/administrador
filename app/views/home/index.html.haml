@@ -1,6 +1,8 @@
 .row.small-12.large-9.columns
-  %h1= t("title.welcome")
-  - if usuario_signed_in?
-    = current_usuario.name
-  %p
-    = image_tag("indice_chat.jpeg", :class => "image_banner")
+  %h1
+    = t("title.welcome")
+    - if usuario_signed_in?
+      = current_usuario.name
+  %div
+    %p
+      = image_tag("indice_chat.jpeg", :class => "image_banner")

@@ -2,11 +2,16 @@
 .row.large-9.columns
   - @usuarios.each do |users|
     .large-6.small-6.columns
-    .large-12.columns.panel.callout.radius
-      .large-3.columns.hovergallery
-        = link_to(image_tag(users.avatar, :class => "imagen-usuario"), :controller => :usuarios, :action => :show, :id => users.id)
-      .large-9.columns
-        %p
-          %strong= users.name
+      .large-12.columns.panel.callout.radius
+        .large-5.columns.hovergallery
+          = link_to(                     |
+            image_tag(users.avatar,      |
+            :class => "imagen-usuario"), |
+            :controller => :usuarios,    |
+            :action => :show,            |
+            :id => users.id)             |
+        .large-7.columns
+        %strong
+          = users.name
           = mostrar_comentarios(users.description, 0)
   .large-6.small-6.columns

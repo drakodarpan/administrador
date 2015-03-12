@@ -1,5 +1,5 @@
 - flash.each do |name, msg|
   - if msg.is_a?(String)
     %div{:class => "alert-box round #{name.to_s == 'notice' ? 'success' : 'alert'} round", "data-alert" => ""}
-      = content_tag :div, msg
+      = content_tag :div, sanitize(msg)
       %a.close{:href => "#"} &times;

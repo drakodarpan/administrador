@@ -31,7 +31,8 @@ gem 'gibbon'
 gem 'high_voltage'
 gem 'simple_form'
 gem 'ckeditor_rails'
-gem 'haml'
+gem 'haml' # Change HTML5 for Haml
+gem 'kaminari' # Paginate
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
